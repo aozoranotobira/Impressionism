@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+  <meta name="description" content="Turn image into Impressionist painting online.">
+  <title>Impressionism</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+</head>
+
+<body>
+  <div id="file"></div>
+  <b>[ Image ]</b><br />
+  Width<input type="number" class="input_number" id="width_number" value="1024" />px　×　
+  Height<input type="number" class="input_number" id="height_number" value="2048" />px
+  <br />
+  <b>[ Line ]</b><br />
+  Thickness<select class="input_select" id="thickness_select"></select>
+  <br />
+  Length<select class="input_select" id="length_select"></select>
+  <input type="checkbox" class="input_check" id="length_check" /><label for="length_check">fixed length</label>
+  <br />
+  Degree<select class="input_select" id="degree_select"></select>
+  <input type="checkbox" class="input_check" id="degree_check" /><label for="degree_check">fixed degree</label>
+  <br />
+  <b>[ Filter Color ]</b><br />
+  Ｒ<select class="input_select" id="red_select"></select>
+  Ｇ<select class="input_select" id="green_select"></select>
+  Ｂ<select class="input_select" id="blue_select"></select>
+  amount<select class="input_select" id="amount_select"></select>
+  <br />
+  <b>[ Speed ]</b><br />
+  <input type="range" class="input_range" id="speed-range" min="10" max="1000" step="10" value="100" />
+  <br />
+  <button type="button" class="button_play" id="play_button">Start <-> Stop</button>
+  <br />
+  <div id="canvas"></div>
+</body>
+
+</html>
